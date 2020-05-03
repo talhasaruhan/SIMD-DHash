@@ -1,0 +1,7 @@
+.clang-format
+parse_compile_flags.py
+compile_flags.txt
+build.bat
+dependencies/
+build/
+deploy/
