@@ -219,7 +219,7 @@ void Resize_Naive(const uint8_t* RESTRICT in, const int in_w, const int in_h, ui
 	}
 }
 
-uint64_t DHashNaive(const uint8_t out[72])
+uint64_t DHashNaive(const uint8_t resized_9x8[72])
 {
 	union
 	{
@@ -232,7 +232,7 @@ uint64_t DHashNaive(const uint8_t out[72])
 	{
 		for (int col = 0; col < 8; ++col)
 		{
-			uint64_t x = (out[(row-1)*8 + col] > out[row*8 + col]);
+			uint64_t x = (resized_9x8[(row - 1) * 8 + col] > resized_9x8[row * 8 + col]);
 			hash._hash |= (x << ((row-1)*8 + col));
 		}
 	}
